@@ -5,6 +5,70 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-jetbrains);
+}
+
+/* ── Portfolio Design Tokens ── */
+:root {
+  /* Developer Palette */
+  --dev-bg: #050505;
+  --dev-surface: #0d0d0d;
+  --dev-border: rgba(255,255,255,0.06);
+  --dev-accent: #39ff14;
+  --dev-accent-dim: rgba(57, 255, 20, 0.15);
+  --dev-text: #e8e8e8;
+  --dev-muted: #555;
+
+  /* Designer Palette */
+  --des-bg: #fafafa;
+  --des-surface: #f2f2f2;
+  --des-accent-1: #a855f7;
+  --des-accent-2: #ec4899;
+  --des-accent-3: #6366f1;
+}
+
+/* ── Custom Cursor ── */
+* { cursor: none; }
+a, button, [role="button"] { cursor: none; }
+
+/* ── Scanlines overlay for dev mode ── */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* ── Neon glow utilities ── */
+.glow-green {
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.3), 0 0 40px rgba(57, 255, 20, 0.12);
+}
+.text-glow-green {
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.6), 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+/* ── Gradient text helper ── */
+.text-gradient-des {
+  background: linear-gradient(135deg, var(--des-accent-1), var(--des-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth scroll is handled via data-scroll-behavior="smooth" on <html> in layout.tsx
+   to avoid Next.js App Router scroll-restoration conflicts on route transitions. */
+
+
+@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
