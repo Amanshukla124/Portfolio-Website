@@ -157,15 +157,8 @@ export default function DesignerPage() {
 
               <motion.div custom={3} variants={fadeUp} initial="hidden" animate="show" className="flex flex-wrap gap-3">
                 <a
-                  href="https://drive.google.com/file/d/1G11TioRwFnQdCxfQ3xxFTo_5pEI1jj1k/view?usp=sharing"
-                  target="_blank" rel="noopener noreferrer"
-                  className="text-sm bg-neutral-900 hover:bg-neutral-700 text-white px-6 py-3 rounded-full transition-all"
-                >
-                  View Portfolio PDF ↗
-                </a>
-                <a
                   href="mailto:amanshukla200521@gmail.com"
-                  className="text-sm border border-neutral-200 hover:border-purple-300 text-neutral-600 hover:text-purple-600 px-6 py-3 rounded-full transition-all"
+                  className="text-sm bg-neutral-900 hover:bg-neutral-700 text-white px-6 py-3 rounded-full transition-all shadow-sm"
                 >
                   Get in touch
                 </a>
