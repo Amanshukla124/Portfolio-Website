@@ -136,12 +136,13 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
    Responsive Bento Layout Map
 ───────────────────────────────────────────── */
 export const BENTO_LAYOUTS = [
-  "col-span-2 row-span-1 md:row-span-2 aspect-[1/1]",                                              // 1. Lazy Tom (Square) — col 1-2, row 1
-  "col-span-2 row-span-1 md:row-span-2 md:col-start-1 md:row-start-3 -mt-16 md:-mt-32 aspect-[4/5] md:aspect-[4/5]", // 2. Website Week — col 1-2, row 3 (pulled up)
-  "col-span-2 md:col-start-3 md:row-start-1 aspect-[16/9]",                                        // 3. Metro Wall — col 3-4, top (16:9)
-  "col-span-2 row-span-2 md:row-span-2 md:col-start-3 md:row-start-2 aspect-[3/4] md:aspect-[3/4]", // 4. College Magazine — col 3-4, below Metro Wall
-  "col-span-2 md:col-start-1 md:row-start-5 -mt-16 md:-mt-40 aspect-[16/9]",                        // 5. Focus (Project 5) — col 1-2, bottom left (pulled up)
-  "col-span-2 md:row-span-2 md:col-start-3 md:row-start-4 aspect-[1/1]",                           // 6. Project 6 — col 3-4, pulled up
+  // Mobile: natural stack (col-span-1). Desktop (md+): fancy bento positions.
+  "col-span-1 md:col-span-2 md:row-span-2 aspect-[1/1]",                                                      // 1. Lazy Tom
+  "col-span-1 md:col-span-2 md:row-span-2 md:col-start-1 md:row-start-3 md:-mt-32 aspect-[4/5]",              // 2. Designers Bazaar
+  "col-span-1 md:col-span-2 md:col-start-3 md:row-start-1 aspect-[16/9]",                                     // 3. Metro Wall
+  "col-span-1 md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-2 aspect-[3/4]",                        // 4. College Magazine
+  "col-span-1 md:col-span-2 md:col-start-1 md:row-start-5 md:-mt-40 aspect-[16/9]",                           // 5. Focus
+  "col-span-1 md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-4 aspect-[1/1]",                        // 6. Non Commissioned
 ];
 
 /* ─────────────────────────────────────────────
@@ -179,7 +180,7 @@ function BehancePanel({
 
   return (
     <motion.div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8"
+      className="fixed inset-0 z-[9999] flex items-end md:items-center justify-center p-0 md:p-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -192,13 +193,13 @@ function BehancePanel({
         style={{ backdropFilter: "blur(5px)" }}
       />
 
-      {/* Centered modal — scale in */}
+      {/* Centered modal — full-screen on mobile, constrained on desktop */}
       <motion.div
-        className="relative z-10 w-full max-w-4xl flex flex-col overflow-hidden rounded-2xl"
+        className="relative z-10 w-full max-w-4xl flex flex-col overflow-hidden md:rounded-2xl"
         style={{
           background: "#0e0e0e",
           boxShadow: "0 32px 80px rgba(0,0,0,0.6)",
-          maxHeight: "90vh",
+          maxHeight: "100dvh",
         }}
         initial={{ scale: 0.93, opacity: 0, y: 16 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -208,17 +209,17 @@ function BehancePanel({
       >
         {/* ── Header ── */}
         <div
-          className="shrink-0 flex items-center justify-between px-7 py-5"
+          className="shrink-0 flex items-center justify-between px-4 md:px-7 py-4 md:py-5"
           style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3 min-w-0">
             <span
-              className="text-[11px] font-bold px-2.5 py-1 rounded-full tracking-wide"
+              className="text-[11px] font-bold px-2.5 py-1 rounded-full tracking-wide shrink-0"
               style={{ background: `${project.accent}25`, color: project.accent }}
             >
               {project.tag}
             </span>
-            <h2 className="text-white font-black text-lg tracking-tight">
+            <h2 className="text-white font-black text-base md:text-lg tracking-tight truncate">
               {project.title}
             </h2>
           </div>
@@ -235,9 +236,9 @@ function BehancePanel({
         {/* ── Two-column body ── */}
         <div className="flex flex-1 overflow-hidden" style={{ minHeight: 0 }}>
 
-          {/* LEFT — sticky metadata sidebar */}
+          {/* LEFT — sticky metadata sidebar: hidden on mobile */}
           <div
-            className="w-48 shrink-0 flex flex-col gap-8 px-7 py-8"
+            className="hidden md:flex w-48 shrink-0 flex-col gap-8 px-7 py-8"
             style={{ borderRight: "1px solid rgba(255,255,255,0.05)" }}
           >
             {/* Accent bar */}
@@ -541,7 +542,7 @@ export default function PortfolioGrid({
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5 w-full">
         {projects.map((p, i) => (
           <ProjectCard 
             key={p.id} 

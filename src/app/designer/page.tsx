@@ -85,7 +85,7 @@ export default function DesignerPage() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative z-30 flex justify-between items-center px-8 py-5 bg-white/60 backdrop-blur-lg border-b border-neutral-200/50"
+          className="relative z-30 flex justify-between items-center px-4 sm:px-8 py-4 sm:py-5 bg-white/60 backdrop-blur-lg border-b border-neutral-200/50"
         >
           <span className="text-xl font-black tracking-tighter text-gradient-des">aman.design</span>
           <div className="flex items-center gap-6">
@@ -124,10 +124,10 @@ export default function DesignerPage() {
               <div className="overflow-hidden mb-8">
                 <motion.h1
                   custom={1} variants={fadeUp} initial="hidden" animate="show"
-                  className="text-5xl md:text-[clamp(3.5rem,7vw,6.5rem)] font-black tracking-tighter leading-[1.05]"
+                  className="text-4xl sm:text-5xl md:text-[clamp(3.5rem,7vw,6.5rem)] font-black tracking-tighter leading-[1.05]"
                 >
                   I design <br className="hidden sm:block" />
-                  <span className="relative inline-flex h-[1.1em] overflow-hidden w-full sm:w-[340px] md:w-[480px] align-bottom">
+                  <span className="relative inline-flex h-[1.1em] overflow-hidden w-full max-w-[340px] sm:max-w-[340px] md:max-w-[480px] align-bottom">
                     <AnimatePresence mode="popLayout">
                       <motion.span
                         key={SLOT_WORDS[slotIndex]}

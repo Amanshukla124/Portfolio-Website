@@ -144,11 +144,11 @@ export default function SplitScreen() {
   const devLines = ["initializing Aman.dev...", "loading projects", "ready ✓"];
 
   return (
-    <div className="relative flex min-h-screen overflow-hidden">
+    <div className="relative flex flex-col md:flex-row min-h-screen overflow-hidden">
       {/* ── DEVELOPER SIDE ── */}
       <motion.div
         id="dev-panel"
-        className="relative flex-1 bg-[#050505] flex flex-col justify-center items-center overflow-hidden select-none"
+        className="relative flex-1 min-h-[50vh] md:min-h-0 bg-[#050505] flex flex-col justify-center items-center overflow-hidden select-none"
         animate={{
           flexGrow: hovered === "developer" ? 1.35 : hovered === "designer" ? 0.65 : 1,
         }}
@@ -156,6 +156,7 @@ export default function SplitScreen() {
         onMouseEnter={() => { setHovered("developer"); setDevTyped(true); }}
         onMouseLeave={() => setHovered(null)}
         onClick={() => handleClick("developer")}
+        onTouchStart={() => { setDevTyped(true); }}
         data-hover="true"
       >
         <DevGrid />
@@ -210,28 +211,30 @@ export default function SplitScreen() {
             )}
           </AnimatePresence>
 
-          {/* Arrow */}
+          {/* Arrow — always visible on mobile, hover-only on desktop */}
           <motion.div
             className="text-green-500/40 font-mono text-xs mt-2"
             animate={{ opacity: hovered === "developer" ? 1 : 0, x: hovered === "developer" ? 0 : -6 }}
             transition={{ duration: 0.3 }}
           >
-            Click to enter →
+            <span className="hidden md:inline">Click to enter →</span>
+            <span className="md:hidden opacity-100">Tap to enter →</span>
           </motion.div>
         </div>
       </motion.div>
 
       {/* ── DIVIDER ── */}
-      <div className="relative z-20 w-px flex-shrink-0">
-        <div className="h-full w-px bg-gradient-to-b from-transparent via-neutral-600 to-transparent" />
+      {/* Vertical on desktop, horizontal on mobile */}
+      <div className="relative z-20 flex-shrink-0 w-full h-px md:w-px md:h-auto">
+        <div className="w-full h-px md:h-full md:w-px bg-gradient-to-r md:bg-gradient-to-b from-transparent via-neutral-600 to-transparent" />
         {/* Center name badge */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap flex flex-col items-center gap-2">
           <div
-            className="bg-[#0d0d0d] border border-neutral-700 rounded-2xl px-7 py-4"
+            className="bg-[#0d0d0d] border border-neutral-700 rounded-2xl px-5 py-3 md:px-7 md:py-4"
             style={{ boxShadow: "0 0 32px rgba(168,85,247,0.12), 0 0 60px rgba(57,255,20,0.06)" }}
           >
             <span
-              className="text-2xl font-black tracking-tight"
+              className="text-xl md:text-2xl font-black tracking-tight"
               style={{
                 backgroundImage: "linear-gradient(135deg, #a855f7 0%, #ffffff 50%, #39ff14 100%)",
                 WebkitBackgroundClip: "text",
@@ -242,14 +245,13 @@ export default function SplitScreen() {
               Aman Shukla
             </span>
           </div>
-
         </div>
       </div>
 
       {/* ── DESIGNER SIDE ── */}
       <motion.div
         id="des-panel"
-        className="relative flex-1 bg-[#fafafa] flex flex-col justify-center items-center overflow-hidden select-none"
+        className="relative flex-1 min-h-[50vh] md:min-h-0 bg-[#fafafa] flex flex-col justify-center items-center overflow-hidden select-none"
         animate={{
           flexGrow: hovered === "designer" ? 1.35 : hovered === "developer" ? 0.65 : 1,
         }}
@@ -316,13 +318,14 @@ export default function SplitScreen() {
             )}
           </AnimatePresence>
 
-          {/* Arrow */}
+          {/* Arrow — always visible on mobile, hover-only on desktop */}
           <motion.div
             className="text-purple-400 text-xs mt-2"
             animate={{ opacity: hovered === "designer" ? 1 : 0, x: hovered === "designer" ? 0 : 6 }}
             transition={{ duration: 0.3 }}
           >
-            ← Click to enter
+            <span className="hidden md:inline">← Click to enter</span>
+            <span className="md:hidden opacity-100">Tap to enter</span>
           </motion.div>
         </div>
       </motion.div>

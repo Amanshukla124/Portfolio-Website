@@ -28,9 +28,11 @@
   --des-accent-3: #6366f1;
 }
 
-/* ── Custom Cursor ── */
-* { cursor: none; }
-a, button, [role="button"] { cursor: none; }
+/* ── Custom Cursor (disabled on touch devices) ── */
+@media (pointer: fine) {
+  * { cursor: none; }
+  a, button, [role="button"] { cursor: none; }
+}
 
 /* ── Scanlines overlay for dev mode ── */
 .scanlines::before {
