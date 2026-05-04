@@ -38,6 +38,7 @@ export default async function DeveloperPage() {
     { name: "Gen AI Engineering Mastermind", issuer: "Outskill", url: "https://drive.google.com/file/d/1SHV8h1pcuS_fWMh6fAkjKtY8GcPM4xKi/view?usp=sharing" },
     { name: "Database Management System", issuer: "NPTEL", url: "https://drive.google.com/file/d/1gVHom-V70L5wNc6hXJS8J0dx17pYXdIs/view" },
     { name: "Python Full Course", issuer: "GeeksforGeeks", url: "https://drive.google.com/file/d/1cuAUEpd8a3WoZ3pxQXm7jkceBwIv8mMJ/view" },
+    { name: "KodeMaster AI Hackathon", issuer: "KodeMaster Academy", url: "https://drive.google.com/file/d/1bEOyzIQ9AuZMZSEnQcRHFA3_dokV3waN/view?usp=sharing" },
   ];
 
   return (
