@@ -12,6 +12,28 @@ export interface Project {
 
 export const STATIC_PROJECTS: Project[] = [
   {
+    name: "Workloom",
+    description:
+      "AI-powered enterprise workflow automation platform that converts organizational knowledge and SOPs into executable workflows with conditions, approvals, and automated actions.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Ollama",
+      "RAG",
+      "AI/LLMs",
+    ],
+    date: "April 2026 – Present",
+    accentColor: "#39ff14",
+    highlights: [
+      "Built an AI-powered platform that converts organizational knowledge and SOPs into executable workflows with conditions, approvals, and automated actions",
+      "Developed a reusable workflow engine supporting branching, human approvals, pause/resume execution, and auditable state",
+      "Implemented real-time execution visibility and employee-centric workflows, enabling organizations to track automation progress and human decision points",
+    ],
+    githubRepo: "https://github.com/Amanshukla124",
+  },
+  {
     name: "HireSense",
     description:
       "AI-powered recruitment platform that tailors resumes, generates cover letters, and automates job application tracking using OpenAI. Built with Flask and deployed on Vercel.",
@@ -26,21 +48,6 @@ export const STATIC_PROJECTS: Project[] = [
     ],
     githubRepo: "https://github.com/Amanshukla124",
     liveUrl: "https://hiresense-five.vercel.app/",
-  },
-  {
-    name: "Cambio",
-    description:
-      "AI-Powered Voucher Exchange Platform — a full-stack web app with Flask, SQLite, & JavaScript. Features a rule-based dynamic pricing engine for credit valuation based on voucher value and expiry.",
-    stack: ["Python (Flask)", "SQLite", "Tailwind CSS", "JavaScript"],
-    date: "Dec 2025 – Feb 2026",
-    accentColor: "#39ff14",
-    highlights: [
-      "Session-based authentication flow",
-      "Rule-based dynamic pricing engine",
-      "Real-time credit previews & animated transaction flows",
-      "Dashboard analytics",
-    ],
-    githubRepo: "https://github.com/Amanshukla124",
   },
   {
     name: "Network Visualizer",

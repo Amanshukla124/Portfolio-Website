@@ -3,8 +3,8 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const PROJECTS = [
+  { slug: "workloom", name: "Workloom", stack: "Next.js · TypeScript · AI/LLMs", date: "April 2026 – Present" },
   { slug: "hiresense", name: "HireSense", stack: "Flask · OpenAI · Python", date: "2024 – 2025" },
-  { slug: "cambio", name: "Cambio", stack: "Flask · SQLite · JS", date: "Dec 2025 – Feb 2026" },
   { slug: "network-visualizer", name: "Network Visualizer", stack: "Python · HTML · CSS", date: "Jan – Mar 2025" },
   { slug: "followup-ai", name: "Follow Up AI", stack: "React · Next.js · AI", date: "2025" },
 ];
@@ -13,7 +13,7 @@ const HELP_TEXT = [
   { cmd: "help", desc: "Show available commands" },
   { cmd: "about", desc: "About Aman Shukla" },
   { cmd: "show projects", desc: "List all projects" },
-  { cmd: "open <project>", desc: "Open project details (e.g. open cambio)" },
+  { cmd: "open <project>", desc: "Open project details (e.g. open workloom)" },
   { cmd: "skills", desc: "Display tech stack" },
   { cmd: "contact", desc: "Get contact info" },
   { cmd: "clear", desc: "Clear terminal" },
