@@ -89,6 +89,7 @@ export default function DesignerPage() {
         >
           <span className="text-xl font-black tracking-tighter text-gradient-des">aman.design</span>
           <div className="flex items-center gap-6">
+            <a href="#work" className="text-xs text-neutral-400 hover:text-purple-500 transition-colors hidden md:inline">work</a>
             <a href="#tools" className="text-xs text-neutral-400 hover:text-purple-500 transition-colors hidden md:inline">tools</a>
             <a
               href="https://linkedin.com/in/aman-shukla-691436297"

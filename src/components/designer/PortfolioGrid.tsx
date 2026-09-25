@@ -12,11 +12,13 @@ export interface PortfolioProject {
   tag: string;
   accent: string;
   cover: string;
+  modalCover?: string;
   images: string[];
   qrCode?: string;
   logos?: string[];
   year?: string;
   objectFit?: "cover" | "contain";
+  aspectRatio?: string;
 }
 
 /* ─────────────────────────────────────────────
@@ -24,12 +26,64 @@ export interface PortfolioProject {
 ───────────────────────────────────────────── */
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
+    id: "project-workloom",
+    title: "Workloom",
+    description: "Workloom is an AI-powered enterprise automation platform designed to transform company knowledge and SOPs into executable workflows. It enables organizations to automate complex processes, coordinate human approvals, and execute real-world operational actions autonomously to eliminate institutional knowledge loss.",
+    tag: "Enterprise AI · UI/UX",
+    accent: "#8b5cf6",
+    cover: "/portfolio/workloom/workloom-02.png",
+    modalCover: "/portfolio/workloom/workloom-01.png",
+    aspectRatio: "aspect-[16/10]",
+    year: "2025",
+    logos: [
+      "/portfolio/workloom/logo.png",
+    ],
+    images: [
+      "/portfolio/workloom/workloom-02.png",
+      "/portfolio/workloom/workloom-03.png",
+      "/portfolio/workloom/workloom-04.png",
+      "/portfolio/workloom/workloom-05.png",
+      "/portfolio/workloom/workloom-06.png",
+      "/portfolio/workloom/workloom-07.png",
+      "/portfolio/workloom/workloom-08.png",
+      "/portfolio/workloom/workloom-09.png",
+      "/portfolio/workloom/workloom-10.png",
+    ],
+  },
+  {
+    id: "project-fiscora",
+    title: "Fiscora",
+    description: "An AI-first enterprise procurement operating system built for modern businesses. Fiscora unifies spend management, approval workflows, vendor tracking, RFQs, and budget control into a single intelligent platform—replacing fragmented emails, spreadsheets, and manual follow-ups.",
+    tag: "Enterprise SaaS · UI/UX",
+    accent: "#10b981",
+    cover: "/portfolio/fiscora/fiscora-01.png",
+    modalCover: "/portfolio/fiscora/fiscora-01.png",
+    aspectRatio: "aspect-[16/10]",
+    year: "2025",
+    logos: [
+      "/portfolio/fiscora/logo.png",
+    ],
+    images: [
+      "/portfolio/fiscora/fiscora-02.png",
+      "/portfolio/fiscora/fiscora-03.png",
+      "/portfolio/fiscora/fiscora-04.png",
+      "/portfolio/fiscora/fiscora-05.png",
+      "/portfolio/fiscora/fiscora-06.png",
+      "/portfolio/fiscora/fiscora-07.png",
+      "/portfolio/fiscora/fiscora-08.png",
+      "/portfolio/fiscora/fiscora-09.png",
+      "/portfolio/fiscora/fiscora-10.png",
+    ],
+  },
+  {
     id: "project-1",
     title: "Lazy Tom",
     description: "Created as part of an internship assignment for Lazy Tom, this project explores the brand's core identity through curated color palettes and cohesive visual language. The deliverables maintain a playful yet professional aesthetic across diverse dynamic compositions.",
     tag: "Branding",
     accent: "#a855f7",
     cover: "/portfolio/lazytom/Untitled-1-05.png",
+    aspectRatio: "aspect-[1/1]",
+    year: "2025",
     images: [
       "/portfolio/lazytom/Untitled-1-01.png",
       "/portfolio/lazytom/Untitled-1-02.png",
@@ -42,28 +96,13 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     ],
   },
   {
-    id: "project-2",
-    title: "Designers Bazaar",
-    description: "A series of high-engagement social media posts designed for 'Designers Bazaar', highlighting digital presence strategies, web design tips, and promotional creatives. The goal was to maintain a dynamic and consistent visual language across multiple carousels.",
-    tag: "Social Media",
-    accent: "#ec4899",
-    cover: "/portfolio/websiteweek/Untitled design (5).png",
-    images: [
-      "/portfolio/websiteweek/Untitled design (3).png",
-      "/portfolio/websiteweek/brand awareness-02.png",
-      "/portfolio/websiteweek/client-02.png",
-      "/portfolio/websiteweek/client-03.png",
-      "/portfolio/websiteweek/Web awareness post-01.png",
-      "/portfolio/websiteweek/Untitled design (4).png"
-    ],
-  },
-  {
     id: "project-3",
     title: "Pune Metro Vision",
     description: "Prototype visuals crafted using AI image generation tools, created to envision the interiors and public spaces of the upcoming Pune Metro station. Each image explores architectural mood, materiality, and commuter experience before a single wall is built.",
     tag: "AI Visualization",
     accent: "#f97316",
     cover: "/portfolio/project4/metro wall image-01.png",
+    aspectRatio: "aspect-[16/9]",
     images: [
       "/portfolio/project4/db 2-01.png",
       "/portfolio/project4/digital board-01.png",
@@ -76,12 +115,31 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     year: "2025",
   },
   {
+    id: "project-2",
+    title: "Designers Bazaar",
+    description: "A series of high-engagement social media posts designed for 'Designers Bazaar', highlighting digital presence strategies, web design tips, and promotional creatives. The goal was to maintain a dynamic and consistent visual language across multiple carousels.",
+    tag: "Social Media",
+    accent: "#ec4899",
+    cover: "/portfolio/websiteweek/Untitled design (5).png",
+    aspectRatio: "aspect-[4/5]",
+    year: "2024",
+    images: [
+      "/portfolio/websiteweek/Untitled design (3).png",
+      "/portfolio/websiteweek/brand awareness-02.png",
+      "/portfolio/websiteweek/client-02.png",
+      "/portfolio/websiteweek/client-03.png",
+      "/portfolio/websiteweek/Web awareness post-01.png",
+      "/portfolio/websiteweek/Untitled design (4).png"
+    ],
+  },
+  {
     id: "project-4",
     title: "College Magazine",
     description: "Designed as part of the editorial board for the college's annual magazine. Featuring clean typography, dynamic layouts, and engaging editorial content.",
     tag: "Editorial",
     accent: "#f59e0b",
     cover: "/portfolio/magazine/cover.png",
+    aspectRatio: "aspect-[3/4]",
     images: [
       "/portfolio/magazine/1.png",
       "/portfolio/magazine/2.png",
@@ -97,6 +155,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tag: "Branding",
     accent: "#8b5cf6",
     cover: "/portfolio/focus/card-01.png",
+    aspectRatio: "aspect-[16/9]",
     logos: [
       "/portfolio/focus/black-01.png",
       "/portfolio/focus/white-01.png",
@@ -118,6 +177,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tag: "Self Work",
     accent: "#06b6d4",
     cover: "/portfolio/selfwork/BAPE.jpg",
+    aspectRatio: "aspect-[1/1]",
     images: [
       "/portfolio/selfwork/CMIYGL.jpg",
       "/portfolio/selfwork/IGOR-01.png",
@@ -132,17 +192,16 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   },
 ];
 
-/* ─────────────────────────────────────────────
-   Responsive Bento Layout Map
-───────────────────────────────────────────── */
+/* Kept for backwards compatibility */
 export const BENTO_LAYOUTS = [
-  // Mobile: natural stack (col-span-1). Desktop (md+): fancy bento positions.
-  "col-span-1 md:col-span-2 md:row-span-2 aspect-[1/1]",                                                      // 1. Lazy Tom
-  "col-span-1 md:col-span-2 md:row-span-2 md:col-start-1 md:row-start-3 md:-mt-32 aspect-[4/5]",              // 2. Designers Bazaar
-  "col-span-1 md:col-span-2 md:col-start-3 md:row-start-1 aspect-[16/9]",                                     // 3. Metro Wall
-  "col-span-1 md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-2 aspect-[3/4]",                        // 4. College Magazine
-  "col-span-1 md:col-span-2 md:col-start-1 md:row-start-5 md:-mt-40 aspect-[16/9]",                           // 5. Focus
-  "col-span-1 md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-4 aspect-[1/1]",                        // 6. Non Commissioned
+  "aspect-[16/10]",
+  "aspect-[16/10]",
+  "aspect-[1/1]",
+  "aspect-[16/9]",
+  "aspect-[4/5]",
+  "aspect-[3/4]",
+  "aspect-[16/9]",
+  "aspect-[1/1]",
 ];
 
 /* ─────────────────────────────────────────────
@@ -175,7 +234,7 @@ function BehancePanel({
   const meta = [
     { label: "Category", value: project.tag },
     { label: "Year",     value: project.year || "2025" },
-    ...(hasImages ? [{ label: "Photos", value: String(project.images.length) }] : []),
+    ...(hasImages ? [{ label: "Assets", value: String(project.images.length + 1) }] : []),
   ];
 
   return (
@@ -226,7 +285,7 @@ function BehancePanel({
           <button
             onClick={onClose}
             aria-label="Close"
-            className="w-8 h-8 rounded-full flex items-center justify-center text-white/40 hover:text-white transition-colors"
+            className="w-8 h-8 rounded-full flex items-center justify-center text-white/40 hover:text-white transition-colors cursor-pointer"
             style={{ background: "rgba(255,255,255,0.07)" }}
           >
             ✕
@@ -280,15 +339,15 @@ function BehancePanel({
               <div className="flex flex-col">
                 {/* Cover image — clean, plain */}
                 <img
-                  src={project.cover || project.images[0]}
+                  src={project.modalCover || project.cover || project.images[0]}
                   alt={project.title}
                   className="w-full h-auto block"
                 />
 
                 {/* Editorial Description Block */}
                 {project.description && (
-                  <div className="px-10 py-20 flex flex-col items-center text-center bg-neutral-950">
-                    <p className="text-white/80 text-lg leading-loose max-w-2xl font-light">
+                  <div className="px-6 md:px-10 py-14 md:py-20 flex flex-col items-center text-center bg-neutral-950">
+                    <p className="text-white/80 text-base md:text-lg leading-relaxed md:leading-loose max-w-2xl font-light">
                       {project.description}
                     </p>
                     
@@ -302,10 +361,10 @@ function BehancePanel({
                     )}
 
                     {project.logos && project.logos.length > 0 && (
-                      <div className="mt-12 flex justify-center gap-3 sm:gap-6 w-full max-w-2xl px-4">
+                      <div className="mt-10 flex justify-center gap-3 sm:gap-6 w-full max-w-2xl px-4">
                         {project.logos.map((logo, idx) => (
-                          <div key={idx} className="flex-1 max-w-[160px] p-2 sm:p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 flex items-center justify-center aspect-square">
-                            <img src={logo} alt={`Logo variation ${idx + 1}`} className="w-full h-full rounded-xl object-contain" />
+                          <div key={idx} className="flex-1 max-w-[150px] p-3 sm:p-5 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 flex items-center justify-center aspect-square">
+                            <img src={logo} alt={`Brand logo ${idx + 1}`} className="w-full h-full rounded-xl object-contain" />
                           </div>
                         ))}
                       </div>
@@ -398,12 +457,12 @@ function LazyImage({ src, alt, index }: { src: string; alt: string; index: numbe
 function ProjectCard({
   project,
   index,
-  layoutClass,
+  layoutClass = "",
   onOpen,
 }: {
   project: PortfolioProject;
   index: number;
-  layoutClass: string;
+  layoutClass?: string;
   onOpen: () => void;
 }) {
   const [hovered, setHovered] = useState(false);
@@ -414,23 +473,25 @@ function ProjectCard({
       opacity: 1,
       y: 0,
       transition: {
-        delay: index * 0.08,
+        delay: (index % 4) * 0.08,
         duration: 0.55,
         ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       },
     },
   };
 
+  const aspectClass = project.aspectRatio || "aspect-[4/3]";
+
   return (
     <motion.article
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-40px" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={onOpen}
-      className={`group relative rounded-3xl overflow-hidden cursor-pointer ${layoutClass}`}
+      className={`group relative rounded-3xl overflow-hidden cursor-pointer w-full ${aspectClass} ${layoutClass}`}
       style={{
         background: `linear-gradient(135deg, ${project.accent}18 0%, ${project.accent}08 100%)`,
         border: "1.5px solid rgba(0,0,0,0.07)",
@@ -446,7 +507,7 @@ function ProjectCard({
           src={project.cover}
           alt={project.title}
           className={`absolute inset-0 w-full h-full ${project.objectFit === "contain" ? "object-contain" : "object-cover"}`}
-          animate={{ scale: hovered ? 1.06 : 1 }}
+          animate={{ scale: hovered ? 1.05 : 1 }}
           transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
         />
       ) : (
@@ -455,7 +516,7 @@ function ProjectCard({
           style={{
             background: `radial-gradient(ellipse 70% 70% at 60% 40%, ${project.accent}30 0%, ${project.accent}10 60%, transparent 100%)`,
           }}
-          animate={{ scale: hovered ? 1.06 : 1 }}
+          animate={{ scale: hovered ? 1.05 : 1 }}
           transition={{ duration: 0.55 }}
         >
           <div
@@ -475,17 +536,17 @@ function ProjectCard({
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 45%, transparent 70%)",
-          opacity: hovered ? 1 : 0.75,
+          background: "linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.22) 45%, transparent 70%)",
+          opacity: hovered ? 1 : 0.82,
           transition: "opacity 0.4s ease",
         }}
       />
 
       {/* Tag */}
-      <div className="absolute top-4 left-4">
+      <div className="absolute top-4 left-4 z-10">
         <span
-          className="text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md"
-          style={{ background: `${project.accent}cc`, color: "#fff", letterSpacing: "0.03em" }}
+          className="text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-md shadow-sm"
+          style={{ background: `${project.accent}e6`, color: "#fff", letterSpacing: "0.02em" }}
         >
           {project.tag}
         </span>
@@ -495,31 +556,31 @@ function ProjectCard({
       <AnimatePresence>
         {hovered && (
           <motion.div
-            className="absolute top-4 right-4"
+            className="absolute top-4 right-4 z-10"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.18 }}
           >
             <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/25">
-              View ↗
+              Explore ↗
             </span>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Bottom text */}
-      <div className="absolute bottom-0 left-0 right-0 p-6">
+      <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10">
         <motion.h3
-          className="text-xl font-black text-white tracking-tight leading-tight mb-1.5"
-          animate={{ y: hovered ? -4 : 0 }}
+          className="text-xl sm:text-2xl font-black text-white tracking-tight leading-tight mb-1.5"
+          animate={{ y: hovered ? -3 : 0 }}
           transition={{ duration: 0.3 }}
         >
           {project.title}
         </motion.h3>
         <motion.p
-          className="text-sm text-white/70 font-light leading-snug line-clamp-2"
-          animate={{ opacity: hovered ? 1 : 0.6, y: hovered ? -4 : 0 }}
+          className="text-xs sm:text-sm text-white/80 font-light leading-snug line-clamp-2"
+          animate={{ opacity: hovered ? 1 : 0.75, y: hovered ? -3 : 0 }}
           transition={{ duration: 0.3 }}
         >
           {project.description}
@@ -540,18 +601,45 @@ export default function PortfolioGrid({
   const [open, setOpen] = useState<PortfolioProject | null>(null);
   const close = useCallback(() => setOpen(null), []);
 
+  const col1 = projects.filter((_, i) => i % 2 === 0);
+  const col2 = projects.filter((_, i) => i % 2 !== 0);
+
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5 w-full">
+      {/* Mobile layout: single natural stream */}
+      <div className="flex flex-col gap-5 md:hidden w-full">
         {projects.map((p, i) => (
           <ProjectCard 
             key={p.id} 
             project={p} 
             index={i} 
-            layoutClass={BENTO_LAYOUTS[i % BENTO_LAYOUTS.length]}
             onOpen={() => setOpen(p)} 
           />
         ))}
+      </div>
+
+      {/* Desktop layout: balanced 2-column masonry */}
+      <div className="hidden md:grid md:grid-cols-2 gap-5 w-full items-start">
+        <div className="flex flex-col gap-5">
+          {col1.map((p, i) => (
+            <ProjectCard 
+              key={p.id} 
+              project={p} 
+              index={i * 2} 
+              onOpen={() => setOpen(p)} 
+            />
+          ))}
+        </div>
+        <div className="flex flex-col gap-5">
+          {col2.map((p, i) => (
+            <ProjectCard 
+              key={p.id} 
+              project={p} 
+              index={i * 2 + 1} 
+              onOpen={() => setOpen(p)} 
+            />
+          ))}
+        </div>
       </div>
 
       <AnimatePresence>
