@@ -14,11 +14,26 @@ export default async function DeveloperPage() {
   const [ghUser, ghRepos] = await Promise.all([getGithubUser(), getGithubRepos()]);
 
   const skills = [
-    { group: "Languages", items: ["Python", "TypeScript", "JavaScript", "HTML", "CSS"] },
-    { group: "Frontend", items: ["React", "Next.js", "Vite", "Tailwind CSS", "Framer Motion"] },
-    { group: "Backend & DB", items: ["Flask", "SQLite", "SQL", "REST APIs", "Node.js"] },
-    { group: "Tools", items: ["Git", "Figma", "Linux", "Illustrator"] },
-    { group: "Concepts", items: ["Data Structures", "Graph Algorithms", "Memory Management", "OOP"] },
+    {
+      group: "Programming & Databases",
+      items: ["Python", "SQL", "RDBMS concepts", "Database Design", "Query Optimization", "TypeScript", "JavaScript"],
+    },
+    {
+      group: "Algorithms & Problem Solving",
+      items: ["Data Structures & Algorithms", "Graph Algorithms", "Memory Management Algorithms"],
+    },
+    {
+      group: "AI & Productivity Tooling",
+      items: ["LLMs", "RAG / Semantic Retrieval", "OpenAI API", "Copilot-style AI-assisted development", "SQL generation tools"],
+    },
+    {
+      group: "Frontend & Web Technologies",
+      items: ["React", "Next.js", "Vite", "Tailwind CSS", "HTML", "CSS", "Responsive & Component-based Design"],
+    },
+    {
+      group: "UI/UX & Visual Design",
+      items: ["User Interface Design", "User Experience Principles", "Wireframing", "Interactive Prototyping"],
+    },
   ];
 
   const experience = [
@@ -112,8 +127,8 @@ export default async function DeveloperPage() {
             </h2>
             <div className="space-y-5">
               {skills.map((group) => (
-                <div key={group.group} className="flex flex-col sm:flex-row gap-3">
-                  <span className="text-[10px] text-neutral-600 tracking-widest uppercase w-32 shrink-0 mt-1 font-mono">
+                <div key={group.group} className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                  <span className="text-[10px] text-neutral-500 tracking-widest uppercase sm:w-56 md:w-64 shrink-0 mt-1 font-mono leading-relaxed">
                     {group.group}
                   </span>
                   <div className="flex flex-wrap gap-2">

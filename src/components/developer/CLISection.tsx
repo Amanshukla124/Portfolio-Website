@@ -70,10 +70,11 @@ function buildOutput(cmd: string): React.ReactNode {
 
   if (c === "skills") {
     const groups = [
-      { label: "Languages", items: ["Python", "TypeScript", "JavaScript", "HTML", "CSS"] },
-      { label: "Frontend", items: ["React", "Next.js", "Vite", "Tailwind CSS", "Framer Motion"] },
-      { label: "Backend", items: ["Flask", "SQLite", "SQL", "REST APIs", "Node.js"] },
-      { label: "Tools", items: ["Git", "Figma", "Linux", "Illustrator"] },
+      { label: "Programming & Databases", items: ["Python", "SQL", "RDBMS concepts", "Database Design", "Query Optimization", "TypeScript", "JavaScript"] },
+      { label: "Algorithms & Problem Solving", items: ["Data Structures & Algorithms", "Graph Algorithms", "Memory Management Algorithms"] },
+      { label: "AI & Productivity Tooling", items: ["LLMs", "RAG / Semantic Retrieval", "OpenAI API", "Copilot-style AI-assisted development", "SQL generation tools"] },
+      { label: "Frontend & Web Technologies", items: ["React", "Next.js", "Vite", "Tailwind CSS", "HTML", "CSS", "Responsive & Component-based Design"] },
+      { label: "UI/UX & Visual Design", items: ["User Interface Design", "User Experience Principles", "Wireframing", "Interactive Prototyping"] },
     ];
     return (
       <div className="space-y-1">
