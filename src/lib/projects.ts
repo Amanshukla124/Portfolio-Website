@@ -34,6 +34,31 @@ export const STATIC_PROJECTS: Project[] = [
     githubRepo: "https://github.com/Amanshukla124",
   },
   {
+    name: "QuietPath",
+    description:
+      "Sensory-friendly navigation and accessibility platform that combines user preferences with environmental and route data to recommend calmer, more comfortable routes and accessible places.",
+    stack: [
+      "Flutter",
+      "Dart",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Riverpod",
+      "Google Maps",
+      "Qwen 0.5B",
+      "Docker",
+    ],
+    date: "July 2026 – Present",
+    accentColor: "#a78bfa",
+    highlights: [
+      "Personalized route recommendations based on noise, crowd density, AQI, accessibility, and user preferences",
+      "Safe Spaces feature for nearby low-stimulation locations with crowd and sensory information",
+      "Calm Voice Guidance with adjustable pacing and sensory-aware alerts",
+      "Integrated Google Maps for location and routing capabilities",
+    ],
+    githubRepo: "https://github.com/ishan2k05/QuietPath",
+  },
+  {
     name: "HireSense",
     description:
       "AI-powered recruitment platform that tailors resumes, generates cover letters, and automates job application tracking using OpenAI. Built with Flask and deployed on Vercel.",
@@ -63,21 +88,5 @@ export const STATIC_PROJECTS: Project[] = [
       "Interactive device-map UI",
     ],
     githubRepo: "https://github.com/Amanshukla124",
-  },
-  {
-    name: "Follow Up AI",
-    description:
-      "Smart follow-up assistant that drafts personalized follow-up emails and reminders for job applications, meetings, and networking conversations using AI-generated context awareness.",
-    stack: ["React", "Next.js", "OpenAI API", "TypeScript"],
-    date: "2025",
-    accentColor: "#bf5fff",
-    highlights: [
-      "AI-drafted contextual follow-up emails",
-      "Job application tracker integration",
-      "Scheduling & reminder system",
-      "Clean, responsive Next.js UI",
-    ],
-    githubRepo: "https://github.com/Amanshukla124",
-    liveUrl: "https://follow-up-ai-chi.vercel.app",
   },
 ];
